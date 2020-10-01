@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Search News</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (submit)="SearchNews($event)"></form>
+  <ion-searchbar (input)= "SearchNews()" [(ngModel)]="term"></ion-searchbar>
+  
+  <ion-card *ngFor="let article of searchdata.articles" (click)="ViewArticle(article)" class="ion-padding">
+    <ion-img [src]="article.urlToImage"></ion-img>
+    <ion-card-header>
+      <ion-card-title> {{article.title}} </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{article.description}}</p>
+      <ion-button>
+        <ion-icon slot="start" name="checkmark"></ion-icon>
+        Add this Topic
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
+
+

@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-text color="dark">
+    <h1 class="ion-text-center">Headlines</h1>
+  </ion-text>
+
+  <ion-card *ngFor="let article of NewsData.articles" (click)="ViewArticle(article)" class="ion-padding">
+    <ion-img [src]="article.urlToImage"></ion-img>
+    <ion-card-header>
+      <ion-card-title> {{article.title}} </ion-card-title>
+    </ion-card-header>
+  
+  </ion-card>
+</ion-content>
